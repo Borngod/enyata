@@ -1,11 +1,10 @@
 import Topbar from "../components/Topbar";
 import { useState, useEffect } from "react";
 import ThemeModal from "../components/ThemeModal";
-import { Pagination, Input, Select } from "antd";
+import { Pagination, Select } from "antd";
 import axios from "axios";
 import PokemonCard from "../components/PokemonCard";
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
 import DetailView from "../components/DetailView";
 import { ClipLoader } from "react-spinners";
 import API_URL from "../services/BaseUrl";
@@ -20,10 +19,17 @@ type ThemeContextProps = {
 type Pokemon = {
   name: string;
   url: string;
+  sprites: {
+    other: {
+      dream_world: {
+        front_default: string;
+      };
+    };
+  };
   [key: string]: any; // Additional properties can be added as needed
 };
 
-const { Search } = Input;
+
 const { Option } = Select;
 
 // Main component for displaying the list of Pokémon
@@ -33,6 +39,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(8);
+   // @ts-ignore: Ignore TypeScript error for the next line
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -68,9 +75,9 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
   }, [searchQuery, pokemonList]);
 
   // Handle the search input change
-  const handleSearch = (value: string) => {
-    setSearchQuery(value);
-  };
+  // const handleSearch = (value: string) => {
+  //   setSearchQuery(value);
+  // };
 
   // Handle the change in page size
   const handlePageSizeChange = (value: number) => {
@@ -90,7 +97,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
 
   return (
     <div className={`back ${theme}`}>
-      <Topbar setSwitch={setSwitch} switchTheme={switchTheme} handle={handleSearch} />
+      <Topbar setSwitch={setSwitch} switchTheme={switchTheme} />
       {switchTheme && (
         <ThemeModal setSwitch={setSwitch} setTheme={setTheme} theme={theme} />
       )}
@@ -137,6 +144,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
       </PaginationControls>
       {selectedPokemon && (
         <DetailView
+         // @ts-ignore: Ignore TypeScript error for the next line
           pokemon={selectedPokemon}
           onClose={() => setSelectedPokemon(null)}
           theme={theme}

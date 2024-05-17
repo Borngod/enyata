@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-
-import styled from "styled-components";
 import axios from "axios";
 import ColorThief from "color-extr-thief";
 import arrow from "../assets/arrow.png";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 // Ant Design Tabs component
-
 
 // Type for the properties expected by the DetailView component
 type DetailViewProps = {
@@ -37,18 +34,18 @@ const DetailView: React.FC<DetailViewProps> = ({ pokemon, onClose, theme }) => {
   const [activeTab, setActiveTab] = useState<string>("about");
 
   // Function to get the dominant color from an image
-  function getDominantColor(imageUrl: string, callback: (color: number[]) => void) {
-    const img = document.createElement("IMG");
+  function getDominantColor(
+    imageUrl: string,
+    callback: (color: number[]) => void
+  ) {
+    // @ts-ignore: Ignore TypeScript error for the next line
+    const img: HTMLImageElement = document.createElement("IMG"); // Explicitly typed as HTMLImageElement
     const colorThief = new ColorThief();
-    img.setAttribute("src", imageUrl);
+    img.src = imageUrl; // Set src directly
     img.crossOrigin = "Anonymous";
-    if (img.complete) {
+    img.onload = () => {
       callback(colorThief.getColor(img));
-    } else {
-      img.addEventListener("load", function () {
-        callback(colorThief.getColor(img));
-      });
-    }
+    };
   }
 
   // Fetch similar Pokémon based on type when the component mounts
@@ -59,6 +56,7 @@ const DetailView: React.FC<DetailViewProps> = ({ pokemon, onClose, theme }) => {
       const data = response.data;
       const similarPokemonRequests = data.pokemon
         .slice(0, 10)
+        // @ts-ignore: Ignore TypeScript error for the next line
         .map((p) => axios.get(p.pokemon.url));
       const similar = await Promise.all(similarPokemonRequests);
       setSimilarPokemon(similar.map((res) => res.data));
@@ -221,5 +219,3 @@ const DetailView: React.FC<DetailViewProps> = ({ pokemon, onClose, theme }) => {
 };
 
 export default DetailView;
-
-

@@ -4,15 +4,11 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
 } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ListView from "./Pages/ListView";
 
-type ThemeContextProps = {
-  theme: string;
-  setTheme: (newTheme: string) => void;
-};
+
 
 function App() {
   const [theme, setTheme] = useState<string>("theme1");

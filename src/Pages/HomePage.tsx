@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import poke from "../assets/Group 1.png";
 import srch from "../assets/search (2).png";
 import { Link } from "react-router-dom";

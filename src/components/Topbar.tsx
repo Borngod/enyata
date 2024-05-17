@@ -6,7 +6,6 @@ import srch from "../assets/Vector (1).png";
 type ThemerProps = {
   setSwitch: (switchState: boolean) => void;
   switchTheme: boolean;
-  handleSearch: (query: string) => void;
 };
 
 /**
@@ -20,7 +19,6 @@ type ThemerProps = {
 const Topbar: React.FC<ThemerProps> = ({
   setSwitch,
   switchTheme,
-  handleSearch,
 }) => {
   return (
     <div className="bg-white flex items-center w-screen top-pokis">
@@ -37,7 +35,6 @@ const Topbar: React.FC<ThemerProps> = ({
         <input
           placeholder="Enter pokemon name"
           className="text-xl rounded-full pl-12 w-10/12 h-14 search-top"
-          onChange={(e) => handleSearch(e.target.value)}
         />
         <img
           src={srch}

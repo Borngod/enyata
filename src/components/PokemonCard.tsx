@@ -1,6 +1,4 @@
 import React from "react";
-import { Card, Button } from "antd";
-import styled from "styled-components";
 import eye from "../assets/eye.png";
 
 // Type for the properties expected by the PokemonCard component
