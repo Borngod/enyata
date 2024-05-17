@@ -1,7 +1,7 @@
 # Poke-Enyata
 
 Poke-Enyata is a modern web application built with React and TypeScript that allows users to search for and view details about various Pokémon. This project uses Vite for fast development and build processes, and integrates several libraries for UI components, state management, and styling.
-Deployed on vercel -
+Deployed on vercel -[vercel app](https://enyata-9e2b.vercel.app/)
 
 ## Table of Contents
 
