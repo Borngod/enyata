@@ -1,0 +1,15 @@
+// .App {
+//   // Common styles for all themes
+// }
+
+.theme1 {
+  @import "../themes/theme1.scss";
+}
+
+.theme2 {
+  @import "../themes/theme2.scss";
+}
+
+.theme3 {
+  @import "../themes/theme3.scss";
+}

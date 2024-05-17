@@ -1,0 +1,48 @@
+$primary-color: #39badf;
+
+.search {
+  border-color: $primary-color;
+
+  .srch-btn {
+    background-color: $primary-color;
+  }
+}
+
+.txt {
+  color: $primary-color;
+}
+
+.out {
+  background-color: $primary-color;
+}
+
+.view-poki {
+  background-color: $primary-color;
+}
+
+.ant-pagination-item-active {
+  background-color: $primary-color !important;
+  border: none !important;
+}
+
+.ant-pagination-item-active a {
+  color: #fff !important;
+}
+
+.ant-select-item-active {
+  background-color: $primary-color !important;
+  border: none !important;
+}
+
+.ant-select-item-active a {
+  color: #fff !important;
+}
+
+.ant-select-selector {
+  border-color: $primary-color !important ;
+}
+
+.ant-select-item-option-active {
+  background-color: $primary-color !important;
+  color: #fff !important;
+}

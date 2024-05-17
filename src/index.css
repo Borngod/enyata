@@ -1,0 +1,452 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* offline styling */
+input:focus {
+  outline: none;
+}
+
+.back {
+  background-color: #f6f6f6;
+  overflow-x: clip;
+}
+
+input.search-top {
+  border: 2px solid #7b7b7b;
+}
+
+div.out-line {
+  outline-offset: 5px;
+  outline: 2px solid #7b7b7b;
+}
+
+div.out0 {
+  background-color: #de527f;
+}
+div.out1 {
+  background-color: #39badf;
+}
+
+div.out2 {
+  background-color: #e1a725;
+}
+
+div.out0:hover,
+div.out1:hover,
+div.out-line:hover,
+div.out2:hover {
+  cursor: pointer;
+}
+
+div.theme-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+div.theme-selector {
+  background-color: #f0f0f0;
+}
+
+/* @media screen and (max-width:540px){
+  .search-top{
+    width: 200px !important;
+    height: 42px;
+    font-size: 12px;
+    
+  }
+  .poke{
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+} */
+/* end of offline stylimng */
+
+/* styling cards */
+div.card {
+  width: 80%;
+  background-color: #ffff;
+  margin: 0 auto;
+  border-radius: 9px;
+  margin-bottom: 60px;
+  padding: 20px;
+  box-shadow: rgba(105, 105, 105, 0.438) 0px 0px 2px;
+  cursor: pointer;
+  height: 260px;
+  z-index: 2;
+  position: relative;
+}
+
+.card:hover {
+  height: 320px;
+  transition: height ease-in-out;
+  transition-duration: 0.2s;
+  z-index: 20;
+}
+/* .card:hover + .view-poki {
+  display: unset;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+} */
+
+div.image-bg {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.image-bg img {
+  width: 60%;
+  position: relative;
+  bottom: 40px;
+}
+
+div.view-poki {
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  /* position: absolute; */
+  display: none;
+}
+
+.view-poki img {
+  object-fit: contain;
+  width: 20px;
+  height: auto;
+}
+
+.card:hover .view-poki {
+  display: unset;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  /* position: absolute; */
+}
+
+.ant-pagination-item {
+  min-width: 42px !important;
+  height: 42px !important;
+  padding-top: 4px !important;
+  font-size: 19px;
+}
+.ant-select-single {
+  min-width: 42px !important;
+  height: 42px !important;
+  padding-top: 4px !important;
+  font-size: 19px;
+}
+
+.ant-select-selection-item {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* detail view styling */
+div.detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 10000;
+}
+
+div.detail-content {
+  height: 100vh;
+  width: 48%;
+}
+
+div.poki-back {
+  width: 700px;
+  height: 300px;
+  border-radius: 20px;
+  position: relative;
+  top: 9px;
+}
+
+div.pokis-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 80px;
+}
+div.pokis-image img {
+  width: 40%;
+}
+
+div.arrow {
+  background-color: #ffff;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  bottom: 230px;
+  left: 2%;
+  cursor: pointer;
+}
+
+div.arrow img {
+  object-fit: contain;
+  width: 20px;
+  height: auto;
+}
+.poki-name {
+  position: relative;
+  margin-top: 85px;
+}
+
+div.about {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7b7b7b1f;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-bottom: 1px solid #7b7b7b79;
+}
+
+.about h2 {
+  border-top: 1px solid #7b7b7b79;
+  border-bottom: 1px solid #7b7b7b79;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffff;
+}
+
+div.about p {
+  border-bottom: 1px solid #7b7b7b79;
+  padding: 10px;
+}
+
+p.not {
+  border: none !important;
+  position: relative;
+  left: 13%;
+}
+
+.about ul {
+  list-style-type: disc;
+}
+
+div.tabs {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
+  background-color: #7b7b7b79;
+  width: 60%;
+  height: 60px;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 25px;
+  margin-top: 15px;
+  gap: 50px;
+  cursor: pointer;
+}
+.tab {
+  width: 15%;
+}
+
+.tab.active {
+  background-color: #ffff;
+  width: 35%;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* stats styling */
+div.stats {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7b7b7b1f;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-bottom: 1px solid #7b7b7b79;
+}
+
+.stats h2 {
+  border-top: 1px solid #7b7b7b79;
+  border-bottom: 1px solid #7b7b7b79;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffff;
+}
+
+span.progress {
+  width: 300px;
+}
+
+div.similar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7b7b7b1f;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-bottom: 1px solid #7b7b7b79;
+  padding-bottom: 6px;
+}
+
+div.similar h2 {
+  border-top: 1px solid #7b7b7b79;
+  border-bottom: 1px solid #7b7b7b79;
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  background-color: #ffff;
+}
+
+.simi img {
+  width: 58%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 20px;
+}
+
+.simi {
+  margin: 0 auto;
+}
+
+li.list-card {
+  background-color: #ffff;
+  margin: 0 auto;
+  width: 270px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+span.list-bg {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  display: block;
+  width: 220px;
+  position: relative;
+}
+
+div.clip {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  top: 30%;
+  left: 750px;
+}
+
+/* media queries */
+@media (max-width: 1400px) {
+  .card:hover .view-poki {
+    gap: 40px;
+    /* position: absolute; */
+  }
+  div.poki-back {
+    width: 580px;
+  }
+
+  div.pokis-image {
+    top: 100px;
+  }
+
+  .poki-name {
+    position: relative;
+    margin-top: 37px;
+    font-size: 30px !important;
+  }
+
+  div.about {
+    margin-top: 13px;
+  }
+
+  div.similar {
+    margin-top: 13px;
+  }
+
+  div.stats {
+    margin-top: 13px;
+  }
+
+  .stats h2,
+  .similar h2,
+  .about h2 {
+    font-size: 22px;
+    padding: 5px;
+  }
+
+  .stats p,
+  div.about p {
+    padding: 2px;
+    font-size: 15px;
+  }
+
+  li.poki-ability {
+    font-size: 15px;
+  }
+
+  div.tabs {
+    height: 40px;
+    font-size: 15px;
+  }
+
+  div.tabs .active {
+    height: 35px;
+  }
+
+  li.stats-list {
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    font-size: 15px;
+  }
+
+  li.list-card {
+    width: 220px;
+    padding: 15px;
+  }
+  .simi img {
+    width: 40%;
+  }
+  span.list-bg {
+    width: 190px;
+    /* margin-right: 50px; */
+  }
+}
