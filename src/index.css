@@ -450,3 +450,82 @@ div.clip {
     /* margin-right: 50px; */
   }
 }
+@media (max-width: 780px) {
+  input.search-top,
+  .search-long img {
+    width: 80px;
+    font-size: 11px;
+    left: -20px;
+    position: relative;
+    padding: 0;
+    display: none;
+  }
+
+  div.top-logo {
+    margin: 0;
+    margin-left: 6px;
+  }
+
+  div.top-switcher {
+    margin: 0 !important;
+    padding: 20px;
+    width: 1990px !important;
+    height: 40px !important;
+    margin-right: 60px !important;
+    border-radius: 100% !important;
+  }
+
+  div.theme-selector {
+    width: 80%;
+  }
+  .card:hover .view-poki {
+    gap: 90px;
+  }
+
+  div.detail-content {
+    width: 100%;
+  }
+
+  div.poki-back {
+    width: 400px !important;
+  }
+  div.pokis-image {
+    top: 150px;
+  }
+  .hzcNuu {
+    gap: 20px !important;
+  }
+
+  .name-poki {
+    width: 250px;
+  }
+
+  div.tabs {
+    height: 50px;
+    width: 80%;
+  }
+
+  .stats ul {
+    width: 250px;
+  }
+  .similar ul {
+    width: 350px;
+  }
+
+  div.similar {
+    width: 370px;
+  }
+
+  span.list-bg {
+    width: 150px;
+  }
+
+  li.list-card {
+    width: 250px;
+    padding: 10px;
+  }
+
+  .simi img {
+    width: 50%;
+  }
+}
