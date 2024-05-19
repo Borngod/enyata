@@ -29,7 +29,6 @@ type Pokemon = {
   [key: string]: any; // Additional properties can be added as needed
 };
 
-
 const { Option } = Select;
 
 // Main component for displaying the list of Pokémon
@@ -39,7 +38,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(8);
-   // @ts-ignore: Ignore TypeScript error for the next line
+  // @ts-ignore: Ignore TypeScript error for the next line
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -49,7 +48,9 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
     const fetchPokemonList = async (limit = 500) => {
       setLoading(true);
       try {
-        const response = await axios.get<{ results: Pokemon[] }>(`${API_URL}/pokemon?limit=${limit}`);
+        const response = await axios.get<{ results: Pokemon[] }>(
+          `${API_URL}/pokemon?limit=${limit}`
+        );
         const detailedPokemonList = await Promise.all(
           response.data.results.map((p) =>
             axios.get<Pokemon>(p.url).then((res) => res.data)
@@ -144,7 +145,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
       </PaginationControls>
       {selectedPokemon && (
         <DetailView
-         // @ts-ignore: Ignore TypeScript error for the next line
+          // @ts-ignore: Ignore TypeScript error for the next line
           pokemon={selectedPokemon}
           onClose={() => setSelectedPokemon(null)}
           theme={theme}
@@ -165,7 +166,9 @@ const PaginationControls = styled.div`
   bottom: 30px;
 
   @media (max-width: 1400px) {
-    gap: 700px;
+    gap: 600px;
+    bottom:-100px;
+    padding-bottom:40px;
   }
   @media (max-width: 768px) {
     flex-direction: column;
@@ -185,5 +188,9 @@ const PokemonGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 1400px) {
+    min-height: 50vh;
   }
 `;

@@ -366,7 +366,6 @@ span.list-bg {
 
 div.clip {
   margin: 0 auto;
-  height: 100vh;
   width: 100%;
   position: relative;
   top: 30%;
@@ -381,6 +380,15 @@ div.clip {
   }
   div.poki-back {
     width: 580px;
+  }
+
+  div.top-switcher {
+    margin-left: 200px;
+  }
+
+  div.clip {
+    left: 640px;
+    top: 170px;
   }
 
   div.pokis-image {
@@ -527,5 +535,14 @@ div.clip {
 
   .simi img {
     width: 50%;
+  }
+
+  .search{
+    width: 90%;
+  }
+
+  div.clip {
+    left: 180px;
+    top: 170px;
   }
 }

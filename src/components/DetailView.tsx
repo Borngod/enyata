@@ -27,6 +27,8 @@ type DetailViewProps = {
   theme: string;
 };
 
+
+
 // Functional component to display the detailed view of a Pokémon
 const DetailView: React.FC<DetailViewProps> = ({ pokemon, onClose, theme }) => {
   const [similarPokemon, setSimilarPokemon] = useState<any[]>([]);
@@ -72,6 +74,7 @@ const DetailView: React.FC<DetailViewProps> = ({ pokemon, onClose, theme }) => {
     );
   }, [pokemon]);
 
+  
   // Render the content of the active tab
   const renderTabContent = () => {
     switch (activeTab) {
