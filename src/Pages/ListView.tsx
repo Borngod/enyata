@@ -56,7 +56,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
             axios.get<Pokemon>(p.url).then((res) => res.data)
           )
         );
-        console.log("Fetched Pokemon Count:", detailedPokemonList.length);
+       
         setPokemonList(detailedPokemonList);
         setFilteredPokemon(detailedPokemonList);
       } catch (error) {
@@ -97,10 +97,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
     currentPage * pageSize
   );
 
-  console.log("Current Page:", currentPage); // Debugging
-  console.log("Page Size:", pageSize); // Debugging
-  console.log("Paginated Pokemon Length:", paginatedPokemon.length); // Debugging
-  console.log("Total Filtered Pokemon:", filteredPokemon.length); // Debugging
+
 
   return (
     <div className={`back ${theme}`}>
