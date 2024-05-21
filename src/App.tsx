@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ListView from "./Pages/ListView";
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -25,6 +26,7 @@ function App() {
           element={<ListView theme={theme} setTheme={setTheme} />}
         />
       </Routes>
+      <Analytics/>
     </Router>
   );
 }

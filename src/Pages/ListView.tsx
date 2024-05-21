@@ -56,6 +56,7 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
             axios.get<Pokemon>(p.url).then((res) => res.data)
           )
         );
+        console.log("Fetched Pokemon Count:", detailedPokemonList.length);
         setPokemonList(detailedPokemonList);
         setFilteredPokemon(detailedPokemonList);
       } catch (error) {
@@ -95,6 +96,11 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
     (currentPage - 1) * pageSize,
     currentPage * pageSize
   );
+
+  console.log("Current Page:", currentPage); // Debugging
+  console.log("Page Size:", pageSize); // Debugging
+  console.log("Paginated Pokemon Length:", paginatedPokemon.length); // Debugging
+  console.log("Total Filtered Pokemon:", filteredPokemon.length); // Debugging
 
   return (
     <div className={`back ${theme}`}>
@@ -138,9 +144,13 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
           onChange={handlePageChange}
         />
         <Select defaultValue={8} onChange={handlePageSizeChange}>
-          <Option value={8}>8</Option>
+        <Option value={8}>8</Option>
           <Option value={16}>16</Option>
           <Option value={24}>24</Option>
+          <Option value={40}>40</Option>
+          <Option value={48}>48</Option>
+          <Option value={56}>56</Option>
+          <Option value={64}>64</Option>
         </Select>
       </PaginationControls>
       {selectedPokemon && (
@@ -167,8 +177,8 @@ const PaginationControls = styled.div`
 
   @media (max-width: 1400px) {
     gap: 600px;
-    bottom:-100px;
-    padding-bottom:40px;
+    bottom: -100px;
+    padding-bottom: 40px;
   }
   @media (max-width: 768px) {
     flex-direction: column;
