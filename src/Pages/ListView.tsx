@@ -34,12 +34,13 @@ const { Option } = Select;
 // Main component for displaying the list of Pokémon
 const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
   const [switchTheme, setSwitch] = useState<boolean>(false);
+   // @ts-ignore: Ignore TypeScript error for the next lin
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(8);
   // @ts-ignore: Ignore TypeScript error for the next line
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  // const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
