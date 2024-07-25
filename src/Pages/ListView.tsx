@@ -69,12 +69,12 @@ const ListView: React.FC<ThemeContextProps> = ({ theme, setTheme }) => {
   }, []);
 
   // Filter Pokémon based on the search query
-  useEffect(() => {
-    const filtered = pokemonList.filter((p) =>
-      p.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setFilteredPokemon(filtered);
-  }, [searchQuery, pokemonList]);
+  // useEffect(() => {
+  //   const filtered = pokemonList.filter((p) =>
+  //     p.name.toLowerCase().includes(searchQuery.toLowerCase())
+  //   );
+  //   setFilteredPokemon(filtered);
+  // }, [searchQuery, pokemonList]);
 
   // Handle the search input change
   // const handleSearch = (value: string) => {
